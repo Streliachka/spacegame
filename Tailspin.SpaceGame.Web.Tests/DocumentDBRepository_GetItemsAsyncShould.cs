@@ -12,7 +12,7 @@ namespace Tests
     public class DocumentDBRepository_GetItemsAsyncShould
     {
         private IDocumentDBRepository<Score> _scoreRepository;
-        private string path = @"G:\\repos\\mslearn-tailspin-spacegame-web-master\\mslearn-tailspin-spacegame-web-master\\Tailspin.SpaceGame.Web\\SampleData\\scores.json";
+        private string path = @"..\\..\\..\\scores.json";
 
         [SetUp]
         public void Setup()
