@@ -12,16 +12,12 @@ namespace Tests
     public class DocumentDBRepository_GetItemsAsyncShould
     {
         private IDocumentDBRepository<Score> _scoreRepository;
+        private string path = @"G:\\repos\\mslearn-tailspin-spacegame-web-master\\mslearn-tailspin-spacegame-web-master\\Tailspin.SpaceGame.Web\\SampleData\\scores.json";
 
         [SetUp]
         public void Setup()
         {
-            using (Stream scoresData = typeof(IDocumentDBRepository<Score>)
-                .Assembly
-                .GetManifestResourceStream("Tailspin.SpaceGame.Web.SampleData.scores.json"))
-            {
-                _scoreRepository = new LocalDocumentDBRepository<Score>(scoresData.ToString());
-            }
+            _scoreRepository = new LocalDocumentDBRepository<Score>(this.path);
         }
 
         [TestCase("Milky Way")]
